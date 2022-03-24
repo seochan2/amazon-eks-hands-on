@@ -2,11 +2,11 @@
 [![Generic badge](https://img.shields.io/badge/language-Korean-blue.svg)](https://github.com/sghaha/amazon-eks-hands-on)
 # Amazon EKS Hands on
 
-### 1. Setting workspace 
-### 2. Container Image 
-### 3. Create EKS Cluster
-### 4. Create Ingress Controller
-### 5. Deploy Microservices
-### 6. Autoscaling Pod & Cluster
-### 7. CI/CD for EKS cluster
-### 8. Monitoring
+### 1. [Setting workspace](https://github.com/seochan2/amazon-eks-hands-on/blob/main/document/setting.md)
+### 2. [Container Image](https://github.com/seochan2/amazon-eks-hands-on/blob/main/document/container.md)
+### 3. [Create EKS Cluster](https://github.com/seochan2/amazon-eks-hands-on/blob/main/document/eks-cluster.md)
+### 4. [Create Ingress Controller](https://github.com/seochan2/amazon-eks-hands-on/blob/main/document/ingress-controller.md)
+### 5. [Deploy Microservices](https://github.com/seochan2/amazon-eks-hands-on/blob/main/document/deploy-service.md)
+### 6. [Autoscaling Pod & Cluster](https://github.com/seochan2/amazon-eks-hands-on/blob/main/document/scaling.md)
+### 7. [CI/CD for EKS cluster](https://github.com/seochan2/amazon-eks-hands-on/blob/main/document/cicd.md)
+### 8. [Monitoring](https://github.com/seochan2/amazon-eks-hands-on/blob/main/document/monitoring.md)
