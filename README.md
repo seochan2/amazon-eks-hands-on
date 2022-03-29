@@ -10,3 +10,4 @@
 ### 6. [Autoscaling Pod & Cluster](https://github.com/seochan2/amazon-eks-hands-on/blob/main/document/scaling.md)
 ### 7. [CI/CD for EKS cluster](https://github.com/seochan2/amazon-eks-hands-on/blob/main/document/cicd.md)
 ### 8. [Monitoring](https://github.com/seochan2/amazon-eks-hands-on/blob/main/document/monitoring.md)
+### 9. [Logging](https://github.com/seochan2/amazon-eks-hands-on/blob/main/document/logging.md)
