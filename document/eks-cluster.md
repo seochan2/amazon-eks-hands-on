@@ -1,7 +1,7 @@
 # 3. Create EKS Cluster
 
-### Create EKS Cluster with eksctl
-#### Create a eks-demo-cluster.yaml
+### 3.1 Create EKS Cluster with eksctl
+#### 3.1.1 Create a eks-demo-cluster.yaml
 ```
 cd ~/environment
 ```
@@ -39,12 +39,12 @@ cloudWatch:
 EOF
 ```
 
-#### Deploy the cluster
+#### 3.1.2 Deploy the cluster
 ```
 eksctl create cluster -f eks-demo-cluster.yaml
 ```
 
-#### Check that the node is properly deployed.
+#### 3.1.3 Check that the node is properly deployed.
 ```
 kubectl get nodes 
 ```
