@@ -52,8 +52,8 @@ spec:
     app: demo-flask-backend
   type: NodePort
   ports:
-    - port: 8080 # 서비스가 생성할 포트  
-      targetPort: 8080 # 서비스가 접근할 pod의 포트
+    - port: 8080 
+      targetPort: 8080 
       protocol: TCP
 EOF
 ```
