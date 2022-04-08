@@ -2,15 +2,20 @@
 
 ### 1.1 AWS Cloud9
 #### 1.1.1 IDE configuration with AWS Cloud9
-- Cloud9 console > Create environment > platform : Amazon Linux 2
+- Cloud9 console > Create environment > Instance type : t3.small / platform : Amazon Linux 2
 - Create in a public subnet
 
 #### 1.1.2 Create IAM Role
 - Create an IAM Role with Administrator access
+- AWS Console > IAM > ROLE> Create Role
+- aws service - ec2 select, next
+- AdministratorAccess search and select, next
+- Role Name : "HandsOn-Admin-userid" > create
 
 #### 1.1.3 Grant IAM Role to an AWS Cloud9 instance
-- EC2 instnace console > Select AWS Cloud9 instance, Actions > Security > Modify IAM Role
-- Change IAM role
+- EC2 instnace console > Select AWS Cloud9 instance
+- Actions > Security > Modify IAM Role
+- Change IAM role(1.1.2)
 
 #### 1.1.4 Update IAM settings in IDE
 - Disable AWS Cloud9 credentials. After that attach the IAM Role(because they are not compatible with EKS IAM authentication)
@@ -22,6 +27,10 @@ rm -vf ${HOME}/.aws/credentials
 - Check that Cloud9 IDE is using the correct IAM Role
 ```
 aws sts get-caller-identity --query Arn | grep eks-admin
+```
+- Example result 
+```
+arn:aws:sts::876630244803:assumed-role/HandsOn-Admin-sghaha/i-03e9af70279e891de
 ```
 
 ### 1.2 AWS CLI
@@ -44,6 +53,10 @@ sudo curl -o /usr/local/bin/kubectl  \
 ```
 ```
 sudo chmod +x /usr/local/bin/kubectl
+```
+- Check the version 
+```
+kubectl version --client=true --short=true
 ```
 
 ### 1.4 etc
@@ -80,6 +93,11 @@ echo "export AWS_REGION=${AWS_REGION}" | tee -a ~/.bash_profile
     
 aws configure set default.region ${AWS_REGION}
 ```
+- Check region
+```
+aws configure get default.region
+```
+
 #### 1.6.2 Register the account ID 
 ```
 export ACCOUNT_ID=$(curl -s 169.254.169.254/latest/dynamic/instance-identity/document | jq -r '.accountId')
