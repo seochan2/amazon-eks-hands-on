@@ -6,6 +6,12 @@
 cd ~/environment
 ```
 ```
+mkdir manifests
+```
+```
+cd manifests
+```
+```
 cat << EOF > eks-demo-cluster.yaml
 ---
 apiVersion: eksctl.io/v1alpha5
@@ -21,8 +27,8 @@ vpc:
 
 managedNodeGroups:
   - name: node-group # Name of node group in EKS Cluster
-    instanceType: m5.large # Instance type for node group
-    desiredCapacity: 3 # The number of worker node in EKS Cluster
+    instanceType: t3.small # Instance type for node group
+    desiredCapacity: 2 # The number of worker node in EKS Cluster
     volumeSize: 10  # EBS Volume for worker node (unit: GiB)
     ssh:
       enableSsm: true
@@ -43,8 +49,20 @@ EOF
 ```
 eksctl create cluster -f eks-demo-cluster.yaml
 ```
+- It takes about 20 minutes
 
 #### 3.1.3 Check that the node is properly deployed.
 ```
 kubectl get nodes 
+```
+- Result example
+```
+NAME                                                STATUS   ROLES    AGE   VERSION
+ip-192-168-18-99.ap-northeast-1.compute.internal    Ready    <none>   90s   v1.21.5-eks-9017834
+ip-192-168-70-110.ap-northeast-1.compute.internal   Ready    <none>   85s   v1.21.5-eks-9017834
+```
+
+#### 3.1.4 Check that Credential
+```
+cat ~/.kube/config
 ```
