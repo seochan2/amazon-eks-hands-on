@@ -18,7 +18,7 @@ npm install
 aws ecr create-repository --repository-name sample-nodejs-backend --image-scanning-configuration scanOnPush=true --region ${AWS_REGION}
 ```
 
-- Result example
+- Example output
 ```
 {
     "repository": {
@@ -43,7 +43,7 @@ aws ecr create-repository --repository-name sample-nodejs-backend --image-scanni
 aws ecr get-login-password --region ap-northeast-2 | docker login --username AWS --password-stdin $ACCOUNT_ID.dkr.ecr.ap-northeast-2.amazonaws.com
 ```
 
-- Result example
+- Example output
 ```
 WARNING! Your password will be stored unencrypted in /home/ec2-user/.docker/config.json.
 Configure a credential helper to remove this warning. See
@@ -75,7 +75,7 @@ docker push $ACCOUNT_ID.dkr.ecr.ap-northeast-2.amazonaws.com/sample-nodejs-backe
 docker images -a
 ```
 
-- Result example
+- Example output
 ```
 REPOSITORY                                                           TAG          IMAGE ID       CREATED         SIZE
 <none>                                                               <none>       85fb9a09b553   2 minutes ago   143MB
@@ -148,7 +148,7 @@ docker push $ACCOUNT_ID.dkr.ecr.ap-northeast-2.amazonaws.com/sample-react-app:la
 docker images -a
 ```
 
-- Result example시
+- Example output
 ```
 REPOSITORY                                                           TAG          IMAGE ID       CREATED         SIZE
 <none>                                                               <none>       85fb9a09b553   2 minutes ago   143MB
@@ -165,7 +165,6 @@ node                                                                 12-alpine  
 ```
 
 - Copy the Image ID of the 876630244803.dkr.ecr.ap[####].com/sample-react-app:latest
-
 ```
 docker rmi --force 6e84f53bb0ea
 ```
