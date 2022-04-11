@@ -55,7 +55,7 @@ eksctl create cluster -f eks-demo-cluster.yaml
 ```
 kubectl get nodes 
 ```
-- Result example
+- Example output
 ```
 NAME                                                STATUS   ROLES    AGE   VERSION
 ip-192-168-18-99.ap-northeast-1.compute.internal    Ready    <none>   90s   v1.21.5-eks-9017834
