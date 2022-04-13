@@ -66,8 +66,6 @@ kubectl apply -f flask-deployment.yaml
 ```
 
 #### 6.1.5 Create the HPA yaml file
-* name 같은거 본인에게 맞게 수정
-
 ```
 cat <<EOF> flask-hpa.yaml
 ---
