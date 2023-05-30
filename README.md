@@ -1,5 +1,7 @@
 [![Generic badge](https://img.shields.io/badge/language-English-orange.svg)](https://github.com/seochan2/amazon-eks-hands-on)
 [![Generic badge](https://img.shields.io/badge/language-Korean-blue.svg)](https://github.com/sghaha/amazon-eks-hands-on)
+[![Generic badge](https://img.shields.io/badge/language-Korean(v2)-blue.svg)](https://github.com/seochan2/amazon-eks-hands-on/blob/main/README_kr.md)
+
 # Amazon EKS Hands on
 The original workshop address is here : [Building Web Applications based on Amazon EKS](https://aws-eks-web-application.workshop.aws/)
 
