@@ -1,7 +1,8 @@
 [![Generic badge](https://img.shields.io/badge/language-English-orange.svg)](https://github.com/seochan2/amazon-eks-hands-on)
 [![Generic badge](https://img.shields.io/badge/language-Korean-blue.svg)](https://github.com/sghaha/amazon-eks-hands-on)
 # Amazon EKS Hands on
-
+원본 워크샵 링크 : [Amazon EKS로 웹 애플리케이션 구축하기](https://aws-eks-web-application.workshop.aws/)
+ 
 ### 1. [실습 환경 구축](https://github.com/sghaha/amazon-eks-hands-on/blob/main/document/setting.md)
 ### 2. [도커 컨테이너 이미지 만들기](https://github.com/sghaha/amazon-eks-hands-on/blob/main/document/container.md)
 ### 3. [EKS 클러스터 생성](https://github.com/sghaha/amazon-eks-hands-on/blob/main/document/eks-cluster.md)
