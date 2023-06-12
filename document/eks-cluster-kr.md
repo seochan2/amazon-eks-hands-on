@@ -10,6 +10,7 @@ cd manifests
 ```
 
 #### 3.1.2 클러스터 배포
+- 배포 yaml 파일 생성
 ```
 cat << EOF > ${EKS_CLUSTER_NAME}.yaml
 ---
@@ -50,6 +51,10 @@ cloudWatch:
 iam:
   withOIDC: true
 EOF
+```
+- 배포 명령어 실행
+```
+eksctl create cluster -f ${EKS_CLUSTER_NAME}.yaml
 ```
 
 #### 3.1.3 노드 배포 확인
