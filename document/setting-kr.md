@@ -57,8 +57,8 @@ rm -vf ${HOME}/.aws/credentials
 ```
 aws sts get-caller-identity --query Arn | grep eks-workspace-admin-<닉네임>
 ```
-- 결과 예시
-> arn:aws:sts::876630244803:assumed-role/eksworkspace-admin-scp/i-03e9af70279e891de
+- 결과 예시   
+`arn:aws:sts::876630244803:assumed-role/eksworkspace-admin-scp/i-03e9af70279e891de`
 
 
 ### 1.2 AWS CLI
@@ -88,8 +88,8 @@ source ~/.bash_profile
 ```
 aws --version
 ```
-- 결과 예시
-> aws-cli/2.11.25 Python/3.11.3 Linux/4.14.314-237.533.amzn2.x86_64 exe/x86_64.amzn.2 prompt/off
+- 결과 예시   
+`aws-cli/2.11.25 Python/3.11.3 Linux/4.14.314-237.533.amzn2.x86_64 exe/x86_64.amzn.2 prompt/off`
 
 ### 1.3 kubectl
 #### 1.3.1 kubectl 최신 바이너리 다운로드
@@ -111,9 +111,9 @@ echo 'export PATH=$HOME/bin:$PATH' >> ~/.bashrc
 ```
 kubectl version --short --client
 ```
-- 결과 예시
-> Client Version: v1.26.4-eks-0a21954
-> Kustomize Version: v4.5.7
+- 결과 예시   
+`Client Version: v1.26.4-eks-0a21954`   
+`Kustomize Version: v4.5.7`
 
 ### 1.4 eksctl 
 #### 1.4.1 eksctl 최신 바이너리 다운로드 
@@ -130,8 +130,8 @@ sudo mv -v /tmp/eksctl /usr/local/bin
 ```
 eksctl version
 ```
-- 결과 예시
-> 0.143.0
+- 결과 예시   
+`0.144.0`
 
 ### 1.5 기타 툴
 #### 1.5.1 jq 설치
@@ -157,12 +157,16 @@ curl -sL https://github.com/derailed/k9s/releases/download/${K9S_VERSION}/k9s_Li
 ```
 k9s version
 ```
-- 결과 예시
-> Version:    v0.27.4
-> 
-> Commit:     f4543e9bd2f9e2db922d12ba23363f6f7db38f9c
-> 
-> Date:       2023-05-07T16:55:34Z
+- 결과 예시   
+`  ____  __.________      `   
+`|    |/ _/   __   \______`   
+`|      < \____    /  ___/`   
+`|    |  \   /    /\___ \ `   
+`|____|__ \ /____//____  >`   
+`        \/            \/ `   
+`Version:    v0.27.4`   
+`Commit:     f4543e9bd2f9e2db922d12ba23363f6f7db38f9c`   
+`Date:       2023-05-07T16:55:34Z`
 
 #### 1.5.4 Helm 설치
 쿠버네티스를 위한 패키지 매니저
@@ -175,8 +179,8 @@ curl -sSL https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 
 helm version
 ```
 
-- 결과 예시
-> version.BuildInfo{Version:"v3.12.0", GitCommit:"c9f554d75773799f72ceef38c51210f1842a1dea", GitTreeState:"clean", GoVersion:"go1.20.3"}
+- 결과 예시   
+`version.BuildInfo{Version:"v3.12.0", GitCommit:"c9f554d75773799f72ceef38c51210f1842a1dea", GitTreeState:"clean", GoVersion:"go1.20.3"}`
 
 ### 1.6 Cloud9 추가 설정
 #### 1.6.1 기본 리전 설정
@@ -198,17 +202,24 @@ echo "export ACCOUNT_ID=${ACCOUNT_ID}" | tee -a ~/.bash_profile
 #### 1.6.3 EKS 클러스터명 환경변수 등록
 ```
 export EKS_CLUSTER_NAME=eks-scp-cluster
+
 echo "export EKS_CLUSTER_NAME=${EKS_CLUSTER_NAME}" | tee -a ~/.bash_profile
 
 export EKS_AZS_AZ1=($(aws ec2 describe-subnets --filters "Name=tag:UserType,Values=eks" "Name=tag:Name,Values=*private*" --query 'Subnets[].[AvailabilityZone][0]' --output text --region $AWS_REGION))
-export EKS_AZS_AZ2=($(aws ec2 describe-subnets --filters "Name=tag:UserType,Values=eks" "Name=tag:Name,Values=*private*" --query 'Subnets[].[AvailabilityZone][1]' --output text --region $AWS_REGION))
-export EKS_AZS_ID1=($(aws ec2 describe-subnets --filters "Name=tag:UserType,Values=eks" "Name=tag:Name,Values=*private*" --query 'Subnets[].[SubnetId][0]' --output text --region $AWS_REGION))
-export EKS_AZS_ID2=($(aws ec2 describe-subnets --filters "Name=tag:UserType,Values=eks" "Name=tag:Name,Values=*private*" --query 'Subnets[].[SubnetId][1]' --output text --region $AWS_REGION))
-echo "export EKS_AZS_AZ1=${EKS_AZS_AZ1}" | tee -a ~/.bash_profile
-echo "export EKS_AZS_AZ2=${EKS_AZS_AZ2}" | tee -a ~/.bash_profile
-echo "export EKS_AZS_ID1=${EKS_AZS_ID1}" | tee -a ~/.bash_profile
-echo "export EKS_AZS_ID2=${EKS_AZS_ID2}" | tee -a ~/.bash_profile
 
+export EKS_AZS_AZ2=($(aws ec2 describe-subnets --filters "Name=tag:UserType,Values=eks" "Name=tag:Name,Values=*private*" --query 'Subnets[].[AvailabilityZone][1]' --output text --region $AWS_REGION))
+
+export EKS_AZS_ID1=($(aws ec2 describe-subnets --filters "Name=tag:UserType,Values=eks" "Name=tag:Name,Values=*private*" --query 'Subnets[].[SubnetId][0]' --output text --region $AWS_REGION))
+
+export EKS_AZS_ID2=($(aws ec2 describe-subnets --filters "Name=tag:UserType,Values=eks" "Name=tag:Name,Values=*private*" --query 'Subnets[].[SubnetId][1]' --output text --region $AWS_REGION))
+
+echo "export EKS_AZS_AZ1=${EKS_AZS_AZ1}" | tee -a ~/.bash_profile
+
+echo "export EKS_AZS_AZ2=${EKS_AZS_AZ2}" | tee -a ~/.bash_profile
+
+echo "export EKS_AZS_ID1=${EKS_AZS_ID1}" | tee -a ~/.bash_profile
+
+echo "export EKS_AZS_ID2=${EKS_AZS_ID2}" | tee -a ~/.bash_profile
 ```
 #### 1.6.4 Cloud9 디스크 사이즈 증설
 ```
@@ -221,5 +232,11 @@ sh resize.sh
 ```
 df -h
 ```
-- 결과 예시
-> /dev/nvme0n1p1   30G  6.7G   24G  23% /
+- 결과 예시   
+`Filesystem      Size  Used Avail Use% Mounted on`   
+`devtmpfs        3.8G     0  3.8G   0% /dev`   
+`tmpfs           3.8G     0  3.8G   0% /dev/shm`   
+`tmpfs           3.8G  460K  3.8G   1% /run`   
+`tmpfs           3.8G     0  3.8G   0% /sys/fs/cgroup`   
+`/dev/nvme0n1p1   30G  7.1G   23G  24% /`   
+`tmpfs           776M     0  776M   0% /run/user/1000`   
